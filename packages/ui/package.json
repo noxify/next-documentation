@@ -1,5 +1,5 @@
 {
-  "name": "@acme/markdoc-codeblock",
+  "name": "@acme/ui",
   "private": true,
   "version": "0.1.0",
   "exports": {
@@ -19,6 +19,13 @@
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "2.0.0",
+    "lucide-react": "^0.294.0",
+    "tailwind-merge": "2.1.0",
+    "tailwindcss-animate": "1.0.7"
+  },
   "devDependencies": {
     "@acme/eslint-config": "workspace:0.2.0",
     "@acme/prettier-config": "workspace:0.1.0",
@@ -28,8 +35,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "@acme/eslint-config/base",
-      "@acme/eslint-config/react"
+      "@acme/eslint-config/base"
     ]
   },
   "prettier": "@acme/prettier-config"

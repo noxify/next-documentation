@@ -28,7 +28,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "@acme/eslint-config/base"
+      "@acme/eslint-config/base",
+      "@acme/eslint-config/react"
     ]
   },
   "prettier": "@acme/prettier-config"

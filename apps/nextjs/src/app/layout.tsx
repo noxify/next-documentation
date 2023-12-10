@@ -1,12 +1,12 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-import "~/styles/globals.css"
+import "@/styles/globals.css";
 
 const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-})
+});
 
 /**
  * Since we're passing `headers()` to the `TRPCReactProvider` we need to
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     site: "@jullerino",
     creator: "@jullerino",
   },
-}
+};
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -37,5 +37,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </body>
     </html>
-  )
+  );
 }

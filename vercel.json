@@ -1,4 +1,5 @@
 {
+  "outputDirectory": "../../generated_docs",
   "github": {
     "silent": true
   }

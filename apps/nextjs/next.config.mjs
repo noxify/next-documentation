@@ -5,8 +5,6 @@ import "./src/env.mjs";
 const config = {
   output: 'export',
 
-  distDir: '../../generated_docs',
-
   reactStrictMode: true,
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [],

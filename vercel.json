@@ -1,5 +1,5 @@
 {
-  "outputDirectory": "../../generated_docs",
+  "outputDirectory": "../generated_docs",
   "github": {
     "silent": true
   }

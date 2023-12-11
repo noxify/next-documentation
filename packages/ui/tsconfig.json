@@ -7,6 +7,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["*.ts", "src"],
+  "include": ["*.ts", "src", "../helpers/src/lib", "../helpers/src/cn.ts"],
   "exclude": ["node_modules"]
 }

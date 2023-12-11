@@ -20,7 +20,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@markdoc/markdoc": "0.4.0"
+    "@markdoc/markdoc": "0.4.0",
+    "zod": "3.22.4",
+    "zod-matter": "0.1.1",
+    "string-strip-html": "13.4.3",
+    "@acme/markdoc-heading": "workspace:0.1.0",
+    "@acme/helpers": "workspace:0.1.0"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:0.2.0",

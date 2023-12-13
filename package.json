@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "sherif": "0.6.1",
-    "@acme/prettier-config": "workspace:0.1.0",
+    "@acme/prettier-config": "workspace:*",
     "@turbo/gen": "1.11.1",
     "prettier": "3.1.1",
     "turbo": "1.11.1",

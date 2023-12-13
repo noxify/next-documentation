@@ -1,9 +1,21 @@
-import type { Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
+import type { Config } from "tailwindcss"
+import { fontFamily } from "tailwindcss/defaultTheme"
 
 export default {
-  content: [""],
-
+  content: [
+    // this is the path for the app
+    "./src/**/*.{js,ts,jsx,tsx}",
+    // haven't found a way to include
+    // the package paths in a dynamic way
+    "../../packages/ui/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/markdoc-accordion/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/markdoc-base/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/markdoc-callout/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/markdoc-codeblock/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/markdoc-custom-link/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/markdoc-heading/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/markdoc-tabs/src/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: ["class"],
   theme: {
     container: {
@@ -74,4 +86,4 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+} satisfies Config

@@ -1,1 +1,1 @@
-export const name = 'ui';
+export { TableOfContents } from "@/components/table-of-contents"

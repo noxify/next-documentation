@@ -2,7 +2,8 @@ import type { Config } from "tailwindcss"
 
 import baseConfig from "@acme/tailwind-config"
 
+console.log({ baseConfig })
+
 export default {
-  content: ["./src/**/*.{ts,tsx}"],
-  presets: [baseConfig],
+  ...baseConfig,
 } satisfies Config

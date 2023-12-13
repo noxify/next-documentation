@@ -24,13 +24,13 @@
     "zod": "3.22.4",
     "zod-matter": "0.1.1",
     "string-strip-html": "13.4.3",
-    "@acme/markdoc-heading": "workspace:0.1.0",
-    "@acme/helpers": "workspace:0.1.0"
+    "@acme/markdoc-heading": "workspace:*",
+    "@acme/helpers": "workspace:*"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:0.2.0",
-    "@acme/prettier-config": "workspace:0.1.0",
-    "@acme/tsconfig": "workspace:0.1.0",
+    "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "eslint": "8.55.0",
     "typescript": "5.3.3"
   },

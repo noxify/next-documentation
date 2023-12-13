@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:tooling/prettier
       '@turbo/gen':
         specifier: 1.11.1
@@ -30,8 +30,11 @@ importers:
   apps/nextjs:
     dependencies:
       '@acme/markdoc-base':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../packages/markdoc-base
+      '@acme/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@t3-oss/env-nextjs':
         specifier: 0.7.1
         version: 0.7.1(typescript@5.3.3)(zod@3.22.4)
@@ -49,16 +52,16 @@ importers:
         version: 3.22.4
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:0.2.0
+        specifier: workspace:*
         version: link:../../tooling/eslint
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/prettier
       '@acme/tailwind-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/tailwind
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/typescript
       '@types/node':
         specifier: 20.10.4
@@ -98,13 +101,13 @@ importers:
         version: 3.3.6
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:0.2.0
+        specifier: workspace:*
         version: link:../../tooling/eslint
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/prettier
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 8.55.0
@@ -116,13 +119,13 @@ importers:
   packages/markdoc-accordion:
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:0.2.0
+        specifier: workspace:*
         version: link:../../tooling/eslint
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/prettier
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 8.55.0
@@ -134,10 +137,10 @@ importers:
   packages/markdoc-base:
     dependencies:
       '@acme/helpers':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../helpers
       '@acme/markdoc-heading':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../markdoc-heading
       '@markdoc/markdoc':
         specifier: 0.4.0
@@ -153,13 +156,13 @@ importers:
         version: 0.1.1(gray-matter@4.0.3)(zod@3.22.4)
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:0.2.0
+        specifier: workspace:*
         version: link:../../tooling/eslint
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/prettier
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 8.55.0
@@ -171,13 +174,13 @@ importers:
   packages/markdoc-callout:
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:0.2.0
+        specifier: workspace:*
         version: link:../../tooling/eslint
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/prettier
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 8.55.0
@@ -189,13 +192,13 @@ importers:
   packages/markdoc-codeblock:
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:0.2.0
+        specifier: workspace:*
         version: link:../../tooling/eslint
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/prettier
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 8.55.0
@@ -207,13 +210,13 @@ importers:
   packages/markdoc-custom-link:
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:0.2.0
+        specifier: workspace:*
         version: link:../../tooling/eslint
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/prettier
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 8.55.0
@@ -225,7 +228,7 @@ importers:
   packages/markdoc-heading:
     dependencies:
       '@acme/helpers':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../helpers
       '@markdoc/markdoc':
         specifier: 0.4.0
@@ -238,13 +241,13 @@ importers:
         version: 18.2.0
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:0.2.0
+        specifier: workspace:*
         version: link:../../tooling/eslint
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/prettier
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 8.55.0
@@ -256,13 +259,13 @@ importers:
   packages/markdoc-tabs:
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:0.2.0
+        specifier: workspace:*
         version: link:../../tooling/eslint
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/prettier
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 8.55.0
@@ -274,10 +277,10 @@ importers:
   packages/ui:
     dependencies:
       '@acme/helpers':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../helpers
       '@acme/tailwind-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/tailwind
       class-variance-authority:
         specifier: ^0.7.0
@@ -299,16 +302,16 @@ importers:
         version: 1.0.7(tailwindcss@3.3.6)
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:0.2.0
+        specifier: workspace:*
         version: link:../../tooling/eslint
       '@acme/markdoc-base':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../markdoc-base
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/prettier
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 8.55.0
@@ -348,10 +351,10 @@ importers:
         version: 4.6.0(eslint@8.55.0)
     devDependencies:
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../prettier
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../typescript
       '@types/eslint':
         specifier: 8.44.8
@@ -378,7 +381,7 @@ importers:
         version: 0.5.9(@ianvs/prettier-plugin-sort-imports@4.1.1)(prettier@3.1.1)
     devDependencies:
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../typescript
       typescript:
         specifier: 5.3.3
@@ -397,13 +400,13 @@ importers:
         version: 1.0.7(tailwindcss@3.3.6)
     devDependencies:
       '@acme/eslint-config':
-        specifier: workspace:0.2.0
+        specifier: workspace:*
         version: link:../eslint
       '@acme/prettier-config':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../prettier
       '@acme/tsconfig':
-        specifier: workspace:0.1.0
+        specifier: workspace:*
         version: link:../typescript
       eslint:
         specifier: 8.55.0

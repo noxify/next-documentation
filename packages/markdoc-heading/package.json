@@ -22,13 +22,13 @@
   "dependencies": {
     "@markdoc/markdoc": "0.4.0",
     "@sindresorhus/slugify": "2.2.1",
-    "@acme/helpers": "workspace:0.1.0",
+    "@acme/helpers": "workspace:*",
     "react": "18.2.0"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:0.2.0",
-    "@acme/prettier-config": "workspace:0.1.0",
-    "@acme/tsconfig": "workspace:0.1.0",
+    "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "eslint": "8.55.0",
     "typescript": "5.3.3"
   },

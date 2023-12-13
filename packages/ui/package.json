@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.1.0",
   "exports": {
-    ".": "./index.ts"
+    ".": "./index.ts",
+    "./style.css": "./style.css"
   },
   "typesVersions": {
     "*": {
@@ -26,14 +27,14 @@
     "tailwindcss": "3.3.6",
     "tailwind-merge": "2.1.0",
     "tailwindcss-animate": "1.0.7",
-    "@acme/tailwind-config": "workspace:0.1.0",
-    "@acme/helpers": "workspace:0.1.0"
+    "@acme/tailwind-config": "workspace:*",
+    "@acme/helpers": "workspace:*"
   },
   "devDependencies": {
-    "@acme/markdoc-base": "workspace:0.1.0",
-    "@acme/eslint-config": "workspace:0.2.0",
-    "@acme/prettier-config": "workspace:0.1.0",
-    "@acme/tsconfig": "workspace:0.1.0",
+    "@acme/markdoc-base": "workspace:*",
+    "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
+    "@acme/tsconfig": "workspace:*",
     "eslint": "8.55.0",
     "typescript": "5.3.3"
   },

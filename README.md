@@ -26,3 +26,4 @@ pnpm i
 * Heading component ( `packages/markdoc-heading`) : https://github.com/dylanmeivis/nextjs13-starter-markdoc
 * Table of contents ( `packages/ui`) : https://github.com/shadcn/ui/blob/main/apps/www/components/toc.tsx
 * Search ( `packages/search`) : https://github.com/oramasearch/orama/tree/main/packages/plugin-nextra
+* Markdoc NextJS Setup: https://github.com/dylanmeivis/nextjs13-starter-markdoc/tree/main

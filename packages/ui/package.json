@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "exports": {
-    ".": "./index.ts",
+    ".": "./src/index.ts",
     "./style.css": "./style.css"
   },
   "typesVersions": {
@@ -40,7 +40,6 @@
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
-    "@acme/markdoc-base": "workspace:*",
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "eslint": "8.55.0",

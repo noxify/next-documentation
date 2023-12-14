@@ -24,7 +24,8 @@
     "zod": "3.22.4",
     "zod-matter": "0.1.1",
     "string-strip-html": "13.4.3",
-    "@acme/markdoc-heading": "workspace:*",
+    "@acme/markdoc-typography": "workspace:*",
+    "@acme/markdoc-tabs": "workspace:*",
     "@acme/helpers": "workspace:*"
   },
   "devDependencies": {

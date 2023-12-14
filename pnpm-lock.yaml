@@ -139,9 +139,12 @@ importers:
       '@acme/helpers':
         specifier: workspace:*
         version: link:../helpers
-      '@acme/markdoc-heading':
+      '@acme/markdoc-tabs':
         specifier: workspace:*
-        version: link:../markdoc-heading
+        version: link:../markdoc-tabs
+      '@acme/markdoc-typography':
+        specifier: workspace:*
+        version: link:../markdoc-typography
       '@markdoc/markdoc':
         specifier: 0.4.0
         version: 0.4.0(react@18.2.0)
@@ -225,11 +228,14 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
 
-  packages/markdoc-heading:
+  packages/markdoc-tabs:
     dependencies:
       '@acme/helpers':
         specifier: workspace:*
         version: link:../helpers
+      '@acme/ui':
+        specifier: workspace:*
+        version: link:../ui
       '@markdoc/markdoc':
         specifier: 0.4.0
         version: 0.4.0(react@18.2.0)
@@ -256,14 +262,11 @@ importers:
         specifier: 5.3.3
         version: 5.3.3
 
-  packages/markdoc-tabs:
+  packages/markdoc-typography:
     dependencies:
       '@acme/helpers':
         specifier: workspace:*
         version: link:../helpers
-      '@acme/ui':
-        specifier: workspace:*
-        version: link:../ui
       '@markdoc/markdoc':
         specifier: 0.4.0
         version: 0.4.0(react@18.2.0)
@@ -344,9 +347,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
-      '@acme/markdoc-base':
-        specifier: workspace:*
-        version: link:../markdoc-base
       '@acme/prettier-config':
         specifier: workspace:*
         version: link:../../tooling/prettier

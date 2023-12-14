@@ -1,20 +1,13 @@
 import fs from "node:fs/promises"
-import type { Node as MarkdocNode, Tag } from "@markdoc/markdoc"
+import type { Tag } from "@markdoc/markdoc"
 import type { PathLike } from "node:fs"
 import Markdoc from "@markdoc/markdoc"
 import { stripHtml } from "string-strip-html"
 
-import { getFrontmatter } from "./frontmatter"
-import { config } from "./index"
+import type { HeadingNode } from "@acme/markdoc-typography"
 
-interface HeadingNode extends MarkdocNode {
-  type: "heading"
-  attributes: {
-    level: 1 | 2 | 3 | 4 | 5 | 6
-    id: string
-    [key: string]: unknown
-  }
-}
+import { config } from "./config"
+import { getFrontmatter } from "./frontmatter"
 
 export interface TableOfContents {
   id: string

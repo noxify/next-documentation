@@ -2,9 +2,10 @@
 "use client"
 
 import * as React from "react"
-import type { TableOfContents } from "@acme/markdoc-base"
 
 import { cn } from "@acme/helpers"
+
+import type { TableOfContents } from "../helpers"
 
 interface TocProps {
   toc: TableOfContents[]

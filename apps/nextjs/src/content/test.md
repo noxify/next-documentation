@@ -45,3 +45,33 @@ rerum. Mihi movit Rhodopen dolores refers summo, commonuit vera clamat versa et
 uvis **monte summoque rarior**, Venus, Imbreus. Lacer tamen cupit, trans sacras
 territaque, custodemque saltem Procne punior. Sparsos debita spes arma asperitas
 turis ostendens dixerat!
+
+## Tabs
+
+### use first
+
+{% tabs %}
+
+{% tab label="Preview" %}
+preview content
+{% /tab %}
+
+{% tab label="Code" %}
+code content
+{% /tab %}
+
+{% /tabs %}
+
+### custom default
+
+{% tabs %}
+
+{% tab label="Preview" %}
+preview content
+{% /tab %}
+
+{% tab label="Code" default=true %}
+code content
+{% /tab %}
+
+{% /tabs %}

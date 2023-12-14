@@ -2,9 +2,19 @@
  * Source: https://github.com/dylanmeivis/nextjs13-starter-markdoc
  */
 
+import type { Node as MarkdocNode } from "@markdoc/markdoc"
 import type { ReactNode } from "react"
 
 import { cn } from "@acme/helpers"
+
+export interface HeadingNode extends MarkdocNode {
+  type: "heading"
+  attributes: {
+    level: 1 | 2 | 3 | 4 | 5 | 6
+    id: string
+    [key: string]: unknown
+  }
+}
 
 interface HeadingProps {
   children: ReactNode

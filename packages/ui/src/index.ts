@@ -1,14 +1,12 @@
-export { TableOfContents } from "@/components/table-of-contents"
-
 export {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
-export { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-export { Badge } from "@/components/ui/badge"
-export { Button } from "@/components/ui/button"
+} from "./components/ui/accordion"
+export { Alert, AlertDescription, AlertTitle } from "./components/ui/alert"
+export { Badge } from "./components/ui/badge"
+export { Button } from "./components/ui/button"
 export {
   Command,
   CommandDialog,
@@ -19,7 +17,7 @@ export {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/components/ui/command"
+} from "./components/ui/command"
 export {
   Dialog,
   DialogClose,
@@ -31,7 +29,7 @@ export {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "./components/ui/dialog"
 export {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -48,13 +46,13 @@ export {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "./components/ui/dropdown-menu"
 export {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
-export { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
+} from "./components/ui/popover"
+export { ScrollArea, ScrollBar } from "./components/ui/scroll-area"
 export {
   Sheet,
   SheetClose,
@@ -66,7 +64,7 @@ export {
   SheetPortal,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from "./components/ui/sheet"
 export {
   Table,
   TableBody,
@@ -76,5 +74,5 @@ export {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-export { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+} from "./components/ui/table"
+export { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs"

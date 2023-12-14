@@ -1,39 +1,58 @@
-import type { RenderableTreeNode, Schema } from "@markdoc/markdoc"
+import type { Config, RenderableTreeNode } from "@markdoc/markdoc"
 import { Tag } from "@markdoc/markdoc"
 
-export const tabsConfig: Schema = {
-  render: "Tabs",
-  children: ["Tab"],
-  transform(node, config) {
-    const labels = node
-      .transformChildren(config)
-      .filter(
-        (child: RenderableTreeNode) => child && (child as Tag).name === "Tab",
-      )
-      .map((tab: RenderableTreeNode) => (tab as Tag).attributes.label as string)
+import { MarkdocTab, MarkdocTabs } from "./components/Tabs"
 
-    const defaultValue = node
-      .transformChildren(config)
-      .filter(
-        (child: RenderableTreeNode) => child && (child as Tag).name === "Tab",
-      )
-      .find(
-        (tab: RenderableTreeNode) =>
-          ((tab as Tag).attributes?.default as boolean) == true,
-      ) as Tag
+export const nodes: Config["nodes"] = {}
 
-    return new Tag(
-      this.render,
-      { labels, defaultValue: defaultValue.attributes?.label as string },
-      node.transformChildren(config),
-    )
+export const tags: Config["tags"] = {
+  tabs: {
+    render: "Tabs",
+    children: ["Tab"],
+    transform(node, config) {
+      const labels = node
+        .transformChildren(config)
+        .filter(
+          (child: RenderableTreeNode) => child && (child as Tag).name === "Tab",
+        )
+        .map(
+          (tab: RenderableTreeNode) => (tab as Tag).attributes.label as string,
+        )
+
+      const findDefaultTab =
+        (node
+          .transformChildren(config)
+          .filter(
+            (child: RenderableTreeNode) =>
+              child && (child as Tag).name === "Tab",
+          )
+          .find(
+            (tab: RenderableTreeNode) =>
+              ((tab as Tag).attributes?.default as boolean) == true,
+          ) as Tag) ?? null
+
+      const defaultValue = findDefaultTab
+        ? (findDefaultTab.attributes?.label as string)
+        : null
+
+      return new Tag(
+        this.render,
+        { labels, defaultValue },
+        node.transformChildren(config),
+      )
+    },
+  },
+
+  tab: {
+    render: "Tab",
+    attributes: {
+      label: { type: String, required: true },
+      default: { type: Boolean, required: false },
+    },
   },
 }
 
-export const tabConfig: Schema = {
-  render: "Tab",
-  attributes: {
-    label: { type: String, required: true },
-    default: { type: Boolean, required: false },
-  },
+export const components = {
+  Tabs: MarkdocTabs,
+  Tab: MarkdocTab,
 }

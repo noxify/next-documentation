@@ -19,6 +19,13 @@
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@sindresorhus/slugify": "2.2.1",
+    "@acme/ui": "workspace:*",
+    "@acme/helpers": "workspace:*",
+    "@markdoc/markdoc": "0.4.0",
+    "react": "18.2.0"
+  },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",

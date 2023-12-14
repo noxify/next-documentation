@@ -13,13 +13,13 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
+    "@acme/markdoc-base": "workspace:*",
+    "@acme/ui": "workspace:*",
     "@t3-oss/env-nextjs": "0.7.1",
     "next": "14.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "zod": "3.22.4",
-    "@acme/markdoc-base": "workspace:*",
-    "@acme/ui": "workspace:*"
+    "zod": "3.22.4"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
@@ -27,7 +27,7 @@
     "@acme/tailwind-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@types/node": "20.10.4",
-    "@types/react": "18.2.43",
+    "@types/react": "18.2.45",
     "@types/react-dom": "18.2.17",
     "dotenv-cli": "7.3.0",
     "eslint": "8.55.0",

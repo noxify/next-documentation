@@ -21,18 +21,18 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@acme/helpers": "workspace:*",
+    "@acme/tailwind-config": "workspace:*",
     "class-variance-authority": "0.7.0",
     "clsx": "2.0.0",
-    "lucide-react": "0.294.0",
-    "tailwindcss": "3.3.6",
+    "lucide-react": "0.295.0",
     "tailwind-merge": "2.1.0",
-    "tailwindcss-animate": "1.0.7",
-    "@acme/tailwind-config": "workspace:*",
-    "@acme/helpers": "workspace:*"
+    "tailwindcss": "3.3.6",
+    "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
-    "@acme/markdoc-base": "workspace:*",
     "@acme/eslint-config": "workspace:*",
+    "@acme/markdoc-base": "workspace:*",
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "eslint": "8.55.0",

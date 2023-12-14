@@ -1,6 +1,7 @@
-import type { PathLike } from "node:fs"
 import fs from "node:fs/promises"
-import Markdoc, { type Node as MarkdocNode, type Tag } from "@markdoc/markdoc"
+import type { Node as MarkdocNode, Tag } from "@markdoc/markdoc"
+import type { PathLike } from "node:fs"
+import Markdoc from "@markdoc/markdoc"
 import { stripHtml } from "string-strip-html"
 
 import { getFrontmatter } from "./frontmatter"

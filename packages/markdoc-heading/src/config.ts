@@ -1,4 +1,5 @@
-import Markdoc, { Tag, type Schema } from "@markdoc/markdoc"
+import type { Schema } from "@markdoc/markdoc"
+import Markdoc, { Tag } from "@markdoc/markdoc"
 import { slugifyWithCounter } from "@sindresorhus/slugify"
 
 const slugify = slugifyWithCounter()

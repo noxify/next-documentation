@@ -1,19 +1,19 @@
 // Source: https://github.com/shadcn/ui/blob/main/apps/www/components/toc.tsx
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 
-import { cn } from "@acme/helpers";
-import type { TableOfContents } from "@acme/markdoc-base";
+import { cn } from "@acme/helpers"
+import type { TableOfContents } from "@acme/markdoc-base"
 
 interface TocProps {
-  toc: TableOfContents[];
+  toc: TableOfContents[]
 }
 
 interface TreeProps {
-  tree: TableOfContents[];
-  level?: number;
-  activeItem?: string;
+  tree: TableOfContents[]
+  level?: number
+  activeItem?: string
 }
 
 export function TableOfContents({ toc }: TocProps) {
@@ -30,46 +30,46 @@ export function TableOfContents({ toc }: TocProps) {
             .map((id) => id.split("#")[1]!)
         : [],
     [toc],
-  );
+  )
 
-  const activeHeading = useActiveItem(itemIds);
+  const activeHeading = useActiveItem(itemIds)
 
-  return <Tree tree={toc} activeItem={activeHeading} />;
+  return <Tree tree={toc} activeItem={activeHeading} />
 }
 
 function useActiveItem(itemIds: string[]) {
-  const [activeId, setActiveId] = React.useState<string>("");
+  const [activeId, setActiveId] = React.useState<string>("")
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
+            setActiveId(entry.target.id)
           }
-        });
+        })
       },
       { rootMargin: `0% 0% -80% 0%` },
-    );
+    )
 
     itemIds?.forEach((id) => {
-      const element = document.getElementById(id);
+      const element = document.getElementById(id)
       if (element) {
-        observer.observe(element);
+        observer.observe(element)
       }
-    });
+    })
 
     return () => {
       itemIds?.forEach((id) => {
-        const element = document.getElementById(id);
+        const element = document.getElementById(id)
         if (element) {
-          observer.unobserve(element);
+          observer.unobserve(element)
         }
-      });
-    };
-  }, [itemIds]);
+      })
+    }
+  }, [itemIds])
 
-  return activeId;
+  return activeId
 }
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
@@ -81,9 +81,9 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
             <a
               href={`#${item.id}`}
               className={cn(
-                "hover:text-foreground inline-block no-underline transition-colors",
+                "inline-block no-underline transition-colors hover:text-foreground",
                 `#${item.id}` === `#${activeItem}`
-                  ? "text-foreground font-medium"
+                  ? "font-medium text-foreground"
                   : "text-muted-foreground",
               )}
             >
@@ -97,8 +97,8 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
               />
             ) : null}
           </li>
-        );
+        )
       })}
     </ul>
-  ) : null;
+  ) : null
 }

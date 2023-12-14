@@ -1,1 +1,1 @@
-export { cn } from "./src/cn";
+export { cn } from "./src/cn"

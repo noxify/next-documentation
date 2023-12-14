@@ -1,1 +1,1 @@
-export const name = 'markdoc-custom-link';
+export const name = "markdoc-custom-link"

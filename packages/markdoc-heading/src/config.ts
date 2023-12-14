@@ -1,8 +1,7 @@
-import Markdoc, { Tag } from "@markdoc/markdoc";
-import type { Schema } from "@markdoc/markdoc";
-import { slugifyWithCounter } from "@sindresorhus/slugify";
+import Markdoc, { Tag, type Schema } from "@markdoc/markdoc"
+import { slugifyWithCounter } from "@sindresorhus/slugify"
 
-const slugify = slugifyWithCounter();
+const slugify = slugifyWithCounter()
 
 export const config: Schema = {
   render: "Heading",
@@ -11,12 +10,12 @@ export const config: Schema = {
     level: { type: Number, required: true },
   },
   transform(node, config) {
-    const attributes = node.transformAttributes(config);
-    const children = node.transformChildren(config);
-    const renderedContent = Markdoc.renderers.html(children);
+    const attributes = node.transformAttributes(config)
+    const children = node.transformChildren(config)
+    const renderedContent = Markdoc.renderers.html(children)
     if (!attributes.id) {
-      attributes.id = slugify(renderedContent);
+      attributes.id = slugify(renderedContent)
     }
-    return new Tag(this.render, attributes, children);
+    return new Tag(this.render, attributes, children)
   },
-};
+}

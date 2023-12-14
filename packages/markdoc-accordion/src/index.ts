@@ -1,1 +1,1 @@
-export const name = 'markdoc-accordion';
+export const name = "markdoc-accordion"

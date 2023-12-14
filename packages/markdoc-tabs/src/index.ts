@@ -1,1 +1,1 @@
-export const name = 'markdoc-tabs';
+export const name = "markdoc-tabs"

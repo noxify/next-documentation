@@ -1,6 +1,6 @@
-import type { Config } from "@markdoc/markdoc";
+import type { Config } from "@markdoc/markdoc"
 
-import { Heading, config as headingConfig } from "@acme/markdoc-heading";
+import { Heading, config as headingConfig } from "@acme/markdoc-heading"
 
 const config: Config = {
   nodes: {
@@ -129,7 +129,7 @@ const config: Config = {
     //     },
     //   },
   },
-};
+}
 
 const components = {
   // Paragraph: TypographyP,
@@ -149,6 +149,6 @@ const components = {
   // Accordion: MarkdocAccordion,
   // AccordionItem: MarkdocAccordionItem,
   // CustomLink: CustomLink,
-};
+}
 
-export { config, components };
+export { config, components }

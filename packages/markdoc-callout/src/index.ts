@@ -1,1 +1,1 @@
-export const name = 'markdoc-callout';
+export const name = "markdoc-callout"

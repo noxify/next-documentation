@@ -1,7 +1,12 @@
 import type { ReactNode } from "react"
 import slugify from "@sindresorhus/slugify"
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@acme/ui"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@acme/ui/components/ui/tabs"
 
 export function MarkdocTabs({
   children,

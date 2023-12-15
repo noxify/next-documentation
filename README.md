@@ -3,10 +3,10 @@
 This is my overengineered documentation repository based on:
 
 * NextJS 14
-* TurboRepo
-* Markdoc
-* tailwind w/ shadcn ui
-* Orama Search
+* TurboRepo ( Powered by [create-t3-turbo](https://github.com/t3-oss/create-t3-turbo) )
+* [Markdoc](https://markdoc.dev/)
+* [tailwind](https://tailwindcss.com/) w/ [shadcn ui](https://ui.shadcn.com/)
+* [Orama Search](https://oramasearch.com/)
 
 ## Requirements
 
@@ -21,9 +21,17 @@ cd next-documentation
 pnpm i
 ```
 
-## References / Sources
+## Sources
 
-* Heading component ( `packages/markdoc-heading`) : https://github.com/dylanmeivis/nextjs13-starter-markdoc
-* Table of contents ( `packages/ui`) : https://github.com/shadcn/ui/blob/main/apps/www/components/toc.tsx
-* Search ( `packages/search`) : https://github.com/oramasearch/orama/tree/main/packages/plugin-nextra
-* Markdoc NextJS Setup: https://github.com/dylanmeivis/nextjs13-starter-markdoc/tree/main
+* Heading component ( `packages/markdoc-typography`) :
+  
+  https://github.com/dylanmeivis/nextjs13-starter-markdoc
+* Table of contents ( `packages/markdoc-base`) : 
+  
+  https://github.com/shadcn/ui/blob/main/apps/www/components/toc.tsx
+* Search ( `packages/search`) : 
+
+  https://github.com/oramasearch/orama/tree/main/packages/plugin-nextra
+* Markdoc NextJS Setup: 
+  
+  https://github.com/dylanmeivis/nextjs13-starter-markdoc/tree/main

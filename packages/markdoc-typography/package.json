@@ -19,8 +19,7 @@
     "lint": "eslint .",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "typecheck": "tsc --noEmit",
-    "build": "ctix build",
-    "dev": "ctix build"
+    "generate:index": "ctix build"
   },
   "dependencies": {
     "@markdoc/markdoc": "0.4.0",

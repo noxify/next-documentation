@@ -37,6 +37,9 @@
     },
     "//#clean": {
       "cache": false
+    },
+    "generate:index": {
+      "dependsOn": ["^topo"]
     }
   },
   "globalEnv": []

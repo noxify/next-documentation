@@ -21,8 +21,7 @@
     "lint": "eslint .",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "typecheck": "tsc --noEmit",
-    "build": "ctix build",
-    "dev": "ctix build"
+    "generate:index": "ctix build"
   },
   "dependencies": {
     "@acme/helpers": "workspace:*",

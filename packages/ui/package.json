@@ -2,6 +2,12 @@
   "name": "@acme/ui",
   "private": true,
   "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    "./components": "./src/components/index.ts",
+    "./components/ui": "./src/components/ui/index.ts",
+    "./style.css": "./style.css"
+  },
   "typesVersions": {
     "*": {
       "*": [
@@ -14,7 +20,9 @@
     "clean": "rm -rf .turbo node_modules",
     "lint": "eslint .",
     "format": "prettier --check . --ignore-path ../../.gitignore",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build": "ctix build",
+    "dev": "ctix build"
   },
   "dependencies": {
     "@acme/helpers": "workspace:*",
@@ -35,6 +43,7 @@
     "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
+    "ctix": "2.3.0",
     "@acme/eslint-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",

@@ -1,0 +1,26 @@
+{
+  "options": [
+    {
+      "mode": "bundle",
+      "project": "tsconfig.json",
+      "startFrom": "src/",
+      "output": "src/components/",
+      "overwrite": true,
+      "backup": false,
+      "include": [
+        "src/components/*.tsx"
+      ]
+    },
+    {
+      "mode": "bundle",
+      "project": "tsconfig.json",
+      "startFrom": "src/",
+      "output": "src/components/ui/",
+      "overwrite": true,
+      "backup": false,
+      "include": [
+        "src/components/ui/*.tsx"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss"
-import { fontFamily } from "tailwindcss/defaultTheme"
 
 export default {
   content: [
@@ -13,10 +12,10 @@ export default {
     "../../packages/markdoc-callout/src/**/*.{js,ts,jsx,tsx}",
     "../../packages/markdoc-codeblock/src/**/*.{js,ts,jsx,tsx}",
     "../../packages/markdoc-custom-link/src/**/*.{js,ts,jsx,tsx}",
-    "../../packages/markdoc-heading/src/**/*.{js,ts,jsx,tsx}",
+    "../../packages/markdoc-typography/src/**/*.{js,ts,jsx,tsx}",
     "../../packages/markdoc-tabs/src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: ["class"],
+  darkMode: ["class", '[data-theme="dark"]'],
   theme: {
     container: {
       center: true,
@@ -66,9 +65,7 @@ export default {
         md: `calc(var(--radius) - 2px)`,
         sm: "calc(var(--radius) - 4px)",
       },
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-      },
+
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

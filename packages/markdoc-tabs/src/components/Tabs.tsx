@@ -6,7 +6,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@acme/ui/components/ui/tabs"
+} from "@acme/ui/components/ui"
 
 export function MarkdocTabs({
   children,

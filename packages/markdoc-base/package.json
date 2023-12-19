@@ -20,19 +20,19 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@markdoc/markdoc": "0.4.0",
-    "zod": "3.22.4",
-    "zod-matter": "0.1.1",
-    "string-strip-html": "13.4.3",
-    "@acme/markdoc-typography": "workspace:*",
+    "@acme/helpers": "workspace:*",
     "@acme/markdoc-tabs": "workspace:*",
-    "@acme/helpers": "workspace:*"
+    "@acme/markdoc-typography": "workspace:*",
+    "@markdoc/markdoc": "0.4.0",
+    "string-strip-html": "13.4.3",
+    "zod": "3.22.4",
+    "zod-matter": "0.1.1"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "eslint": "8.55.0",
+    "eslint": "8.56.0",
     "typescript": "5.3.3"
   },
   "eslintConfig": {

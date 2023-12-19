@@ -18,7 +18,9 @@
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
     "lint:ws": "sherif",
     "typecheck": "turbo typecheck",
-    "gen": "turbo gen"
+    "gen": "turbo gen",
+    "deps:check": "pnpm outdated -r",
+    "deps:update": "pnpm update -i -L -r"
   },
   "devDependencies": {
     "@acme/prettier-config": "workspace:*",

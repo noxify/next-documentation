@@ -22,18 +22,18 @@
     "generate:index": "ctix build"
   },
   "dependencies": {
-    "@sindresorhus/slugify": "2.2.1",
-    "@acme/ui": "workspace:*",
     "@acme/helpers": "workspace:*",
+    "@acme/ui": "workspace:*",
     "@markdoc/markdoc": "0.4.0",
+    "@sindresorhus/slugify": "2.2.1",
     "react": "18.2.0"
   },
   "devDependencies": {
-    "ctix": "2.3.0",
     "@acme/eslint-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
-    "eslint": "8.55.0",
+    "ctix": "2.3.0",
+    "eslint": "8.56.0",
     "typescript": "5.3.3"
   },
   "eslintConfig": {

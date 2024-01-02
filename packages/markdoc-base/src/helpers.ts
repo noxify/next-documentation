@@ -4,7 +4,7 @@ import type { PathLike } from "node:fs"
 import Markdoc from "@markdoc/markdoc"
 import { stripHtml } from "string-strip-html"
 
-import type { HeadingNode } from "@acme/markdoc-typography"
+import type { HeadingNode } from "@acme/markdoc-typography/components"
 
 import { config } from "./config"
 import { getFrontmatter } from "./frontmatter"
@@ -45,7 +45,7 @@ export async function parseContent(filePath: PathLike | fs.FileHandle) {
   return {
     content,
     ...frontmatter,
-    toc: generateTableOfContents(headings),
+    headings,
   }
 }
 

@@ -13,6 +13,11 @@
     "with-env": "dotenv -e ../../.env --"
   },
   "dependencies": {
+    "globby": "14.0.0",
+    "p-map": "7.0.0",
+    "@tanstack/query-core": "5.14.1",
+    "@tanstack/react-query": "5.14.1",
+    "@tanstack/react-query-devtools": "5.14.1",
     "@acme/markdoc-base": "workspace:*",
     "@acme/ui": "workspace:*",
     "@t3-oss/env-nextjs": "0.7.1",

@@ -24,7 +24,7 @@
     "@acme/markdoc-tabs": "workspace:*",
     "@acme/markdoc-typography": "workspace:*",
     "@markdoc/markdoc": "0.4.0",
-    "string-strip-html": "13.4.3",
+    "string-strip-html": "13.4.4",
     "zod": "3.22.4",
     "zod-matter": "0.1.1"
   },

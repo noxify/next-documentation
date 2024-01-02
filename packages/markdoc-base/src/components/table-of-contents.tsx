@@ -1,7 +1,7 @@
 // Source: https://github.com/shadcn/ui/blob/main/apps/www/components/toc.tsx
 "use client"
 
-import * as React from "react"
+import { useEffect, useMemo, useState } from "react"
 
 import { cn } from "@acme/helpers"
 
@@ -18,7 +18,7 @@ interface TreeProps {
 }
 
 export function TableOfContents({ toc }: TocProps) {
-  const itemIds = React.useMemo(
+  const itemIds = useMemo(
     () =>
       toc
         ? toc
@@ -39,9 +39,9 @@ export function TableOfContents({ toc }: TocProps) {
 }
 
 function useActiveItem(itemIds: string[]) {
-  const [activeId, setActiveId] = React.useState<string>("")
+  const [activeId, setActiveId] = useState<string>("")
 
-  React.useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

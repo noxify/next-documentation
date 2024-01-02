@@ -26,7 +26,10 @@
     "@markdoc/markdoc": "0.4.0",
     "string-strip-html": "13.4.4",
     "zod": "3.22.4",
-    "zod-matter": "0.1.1"
+    "zod-matter": "0.1.1",
+    "p-map": "7.0.1",
+    "globby": "14.0.0",
+    "react": "18.2.0"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",

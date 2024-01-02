@@ -1,0 +1,18 @@
+{
+  "name": "@acme/content",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:*",
+    "@acme/prettier-config": "workspace:*",
+    "eslint": "8.56.0",
+    "prettier": "3.1.1"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@acme/eslint-config/base"
+    ]
+  },
+  "prettier": "@acme/prettier-config"
+}

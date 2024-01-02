@@ -1,5 +1,6 @@
 // Importing env files here to validate on build
 import "./src/env.mjs"
+//import { withNextDevtools } from '@next-devtools/core/plugin'
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -13,4 +14,5 @@ const config = {
   typescript: { ignoreBuildErrors: true },
 }
 
+//export default withNextDevtools(config)
 export default config

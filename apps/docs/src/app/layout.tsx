@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 
+//import { NextDevtoolsProvider } from "@next-devtools/core"
+
 import { Logo, SidebarNavigation, TailwindIndicator } from "@acme/ui/components"
 
 import "@acme/ui/style.css"
@@ -17,6 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en" suppressHydrationWarning={true}>
       <head />
       <body>
+        {/* <NextDevtoolsProvider> */}
         <Providers defaultTheme="dark" enableSystem disableTransitionOnChange>
           <div className="relative flex flex-col">
             <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -52,6 +55,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
           <TailwindIndicator />
         </Providers>
+        {/* </NextDevtoolsProvider> */}
       </body>
     </html>
   )

@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@acme/markdoc-base": "workspace:*",
+    "@acme/helpers": "workspace:*",
     "@acme/ui": "workspace:*",
     "@t3-oss/env-nextjs": "0.7.1",
     "@tanstack/query-core": "5.17.0",
@@ -25,7 +26,8 @@
     "p-map": "7.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "zod": "3.22.4"
+    "zod": "3.22.4",
+    "@next-devtools/core": "0.1.2"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",

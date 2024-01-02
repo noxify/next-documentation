@@ -1,5 +1,6 @@
 // Importing env files here to validate on build
 import "./src/env.mjs"
+
 //import { withNextDevtools } from '@next-devtools/core/plugin'
 
 /** @type {import("next").NextConfig} */

@@ -54,7 +54,9 @@ export async function generateMetadata(
 
   return {
     applicationName: parentMeta.applicationName,
-    title: document?.frontmatter.title ?? parentMeta.title,
+    title: `${document?.frontmatter.title ?? parentMeta.title?.absolute} - ${
+      parentMeta.applicationName
+    }`,
     description: document?.frontmatter.description ?? parentMeta.description,
   }
 }
@@ -70,30 +72,41 @@ export default async function DocsPage({ params }: DocPageProps) {
     <div className="flex-1">
       <div className="container">
         <div className="mx-auto flex">
-          <aside className="sticky top-16 hidden h-[calc(100vh-121px)] w-[284px] lg:flex lg:shrink-0 lg:flex-col lg:justify-between">
-            <div className="absolute bottom-0 right-0 top-12 w-px bg-gray-200 dark:block dark:bg-slate-800" />
-            <div className="overflow-y-auto overflow-x-hidden bg-red-200 py-8 pr-6">
-              <SidebarNavigation items={[]} />
-            </div>
-          </aside>
+          {pageContent.sidebar && (
+            <aside className="sticky top-16 hidden h-[calc(100vh)] w-[284px] lg:flex lg:shrink-0 lg:flex-col lg:justify-between">
+              <div className="overflow-y-auto overflow-x-hidden bg-red-200 py-8 pr-6">
+                <SidebarNavigation items={[]} />
+              </div>
+            </aside>
+          )}
           <main className="mt-4 w-full min-w-0 max-w-6xl px-0 lg:pl-6 xl:pr-8">
-            {Markdoc.renderers.react(pageContent.content, React, {
-              components,
-            })}
+            <div className="space-y-2">
+              <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+                {pageContent.title}
+              </h1>
+              <p className="text-lg text-gray-500">{pageContent.description}</p>
+            </div>
+            <div className="mt-8">
+              {Markdoc.renderers.react(pageContent.content, React, {
+                components,
+              })}
+            </div>
           </main>
-          <div className="hidden xl:sticky xl:top-[1.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
-            <nav aria-labelledby="on-this-page-title" className="w-56">
-              <h2
-                id="on-this-page-title"
-                className="font-display text-sm font-medium text-foreground"
-              >
-                On this page
-              </h2>
-              <TableOfContents
-                toc={generateTableOfContents(pageContent.headings)}
-              />
-            </nav>
-          </div>
+          {pageContent.toc && (
+            <div className="hidden xl:sticky xl:top-[4.25rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:pb-16 xl:pr-6 xl:pt-4">
+              <nav aria-labelledby="on-this-page-title" className="w-56">
+                <h2
+                  id="on-this-page-title"
+                  className="font-display text-sm font-medium text-foreground"
+                >
+                  On this page
+                </h2>
+                <TableOfContents
+                  toc={generateTableOfContents(pageContent.headings)}
+                />
+              </nav>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -73,4 +73,23 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .list-unordered > li:before {
+    content: " ";
+    @apply absolute left-1 top-2 h-2 w-2 rounded-[50%] bg-muted-foreground;
+  }
+
+  .list-unordered > li {
+    @apply relative pl-9;
+  }
+
+  .list-ordered {
+    counter-reset: listitem;
+  }
+
+  .list-ordered > li:before {
+    counter-increment: listitem;
+    content: counter(listitem);
+    @apply left-0 top-1 mr-4 h-3 w-5 rounded-full bg-muted px-2 py-1 text-xs;
+  }
 }

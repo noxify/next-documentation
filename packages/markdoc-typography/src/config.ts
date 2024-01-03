@@ -4,7 +4,7 @@ import { slugifyWithCounter } from "@sindresorhus/slugify"
 
 import { Blockquote } from "./components/Blockquote"
 import { Heading } from "./components/Heading"
-import { List } from "./components/List"
+import { List, ListItem } from "./components/List"
 import { Paragraph } from "./components/Paragraph"
 
 const slugify = slugifyWithCounter()
@@ -34,13 +34,45 @@ export const nodes: Config["nodes"] = {
   blockquote: {
     render: "Blockquote",
   },
+
+  list: {
+    render: "List",
+    attributes: {
+      ordered: { type: Boolean, required: false },
+    },
+  },
+
+  item: {
+    render: "ListItem",
+  },
 }
 
-export const tags: Config["tags"] = {}
+export const tags: Config["tags"] = {
+  orderedlist: {
+    render: "List",
+    attributes: {
+      ordered: { type: Boolean, required: false, default: true },
+      type: { type: String, required: false },
+      start: { type: Number, required: false },
+    },
+    transform(node, config) {
+      const attributes = node.transformAttributes(config)
+      const children = node.transformChildren(config)
+
+      const elements = children[0] as Tag
+      if (children.length && elements?.name === "List") {
+        elements.attributes = attributes
+      }
+
+      return elements
+    },
+  },
+}
 
 export const components = {
   Paragraph: Paragraph,
   Heading: Heading,
   Blockquote: Blockquote,
   List: List,
+  ListItem: ListItem,
 }

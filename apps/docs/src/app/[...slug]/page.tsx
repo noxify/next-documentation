@@ -1,14 +1,16 @@
 import path from "path"
+import type { Metadata, ResolvingMetadata } from "next"
 import React from "react"
-import { Metadata, ResolvingMetadata } from "next"
 import { notFound } from "next/navigation"
 
 import {
   components,
+  generateTableOfContents,
   getAllDocuments,
   getDocument,
   Markdoc,
   parseContent,
+  TableOfContents,
 } from "@acme/markdoc-base"
 import { SidebarNavigation } from "@acme/ui/components"
 
@@ -25,6 +27,14 @@ function getContentPath() {
   return path.join(projectDirectory, "apps/content")
 }
 
+async function getContent({ params }: DocPageProps) {
+  const contentPath = getContentPath()
+
+  const parsedParams = `/${params.slug.join("/")}`
+
+  return await getDocument(contentPath, parsedParams)
+}
+
 export async function generateStaticParams(): Promise<
   DocPageProps["params"][]
 > {
@@ -38,14 +48,9 @@ export async function generateMetadata(
   { params }: DocPageProps,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  const contentPath = getContentPath()
-  const parsedParams = `/${params.slug.join("/")}`
-
-  const document = await getDocument(contentPath, parsedParams)
+  const document = await getContent({ params })
 
   const parentMeta = await parent
-
-  console.log({ parentMeta })
 
   return {
     applicationName: parentMeta.applicationName,
@@ -54,11 +59,8 @@ export async function generateMetadata(
   }
 }
 export default async function DocsPage({ params }: DocPageProps) {
-  const contentPath = getContentPath()
+  const document = await getContent({ params })
 
-  const parsedParams = `/${params.slug.join("/")}`
-
-  const document = await getDocument(contentPath, parsedParams)
   if (!document) notFound()
 
   const pageContent = await parseContent(document.docPath)
@@ -79,6 +81,19 @@ export default async function DocsPage({ params }: DocPageProps) {
               components,
             })}
           </main>
+          <div className="hidden xl:sticky xl:top-[1.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
+            <nav aria-labelledby="on-this-page-title" className="w-56">
+              <h2
+                id="on-this-page-title"
+                className="font-display text-sm font-medium text-foreground"
+              >
+                On this page
+              </h2>
+              <TableOfContents
+                toc={generateTableOfContents(pageContent.headings)}
+              />
+            </nav>
+          </div>
         </div>
       </div>
     </div>

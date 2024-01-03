@@ -9,11 +9,11 @@ import type { HeadingNode } from "@acme/markdoc-typography/components"
 import { config } from "./config"
 import { getFrontmatter } from "./frontmatter"
 
-export interface TableOfContents {
+export interface TableOfContentsProps {
   id: string
   title: string
   level: number
-  children?: TableOfContents[]
+  children?: TableOfContentsProps[]
 }
 
 export async function getFileContent(filePath: PathLike | fs.FileHandle) {
@@ -50,7 +50,7 @@ export async function parseContent(filePath: PathLike | fs.FileHandle) {
 }
 
 export function generateTableOfContents(headings: Tag[]) {
-  const sections: TableOfContents[] = []
+  const sections: TableOfContentsProps[] = []
 
   for (const heading of headings) {
     const attributes = (heading as unknown as HeadingNode).attributes

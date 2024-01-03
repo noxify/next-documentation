@@ -52,7 +52,10 @@ export function Heading({ children, level, id }: HeadingProps) {
       className={cn("group my-4 scroll-m-20 tracking-tight", headingClass)}
     >
       {children}
-      <a href={`#${id}`} className="ml-2 hidden group-hover:inline">
+      <a
+        href={`#${id}`}
+        className="ml-2 hidden text-muted-foreground hover:text-foreground group-hover:inline"
+      >
         #
       </a>
     </HeadingTag>

@@ -5,14 +5,14 @@ import { useEffect, useMemo, useState } from "react"
 
 import { cn } from "@acme/helpers"
 
-import type { TableOfContents } from "../helpers"
+import type { TableOfContentsProps } from "../helpers"
 
 interface TocProps {
-  toc: TableOfContents[]
+  toc: TableOfContentsProps[]
 }
 
 interface TreeProps {
-  tree: TableOfContents[]
+  tree: TableOfContentsProps[]
   level?: number
   activeItem?: string
 }
@@ -84,7 +84,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
               className={cn(
                 "inline-block no-underline transition-colors hover:text-foreground",
                 `#${item.id}` === `#${activeItem}`
-                  ? "font-medium text-foreground"
+                  ? "text-foreground"
                   : "text-muted-foreground",
               )}
             >

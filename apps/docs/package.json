@@ -27,7 +27,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "zod": "3.22.4",
-    "@next-devtools/core": "0.1.2"
+    "@next-devtools/core": "0.1.2",
+    "zustand": "4.4.7"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",

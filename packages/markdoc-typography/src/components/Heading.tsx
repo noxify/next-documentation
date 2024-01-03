@@ -31,7 +31,7 @@ export function Heading({ children, level, id }: HeadingProps) {
       break
     case 2:
       headingClass =
-        "border-b pb-2 text-3xl font-semibold transition-colors first:mt-0"
+        "border-b pb-2 text-3xl font-semibold transition-colors first:mt-0 mt-6"
       break
     case 3:
       headingClass = "text-2xl font-semibold"
@@ -49,9 +49,12 @@ export function Heading({ children, level, id }: HeadingProps) {
   return (
     <HeadingTag
       id={id}
-      className={cn(headingClass, "my-4 scroll-m-20 tracking-tight")}
+      className={cn("group my-4 scroll-m-20 tracking-tight", headingClass)}
     >
       {children}
+      <a href={`#${id}`} className="ml-2 hidden group-hover:inline">
+        #
+      </a>
     </HeadingTag>
   )
 }

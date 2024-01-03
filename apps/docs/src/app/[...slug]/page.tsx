@@ -1,8 +1,8 @@
 import path from "path"
 import React from "react"
+import { Metadata, ResolvingMetadata } from "next"
 import { notFound } from "next/navigation"
 
-import { getProjectRoot } from "@acme/helpers"
 import {
   components,
   getAllDocuments,
@@ -10,6 +10,7 @@ import {
   Markdoc,
   parseContent,
 } from "@acme/markdoc-base"
+import { SidebarNavigation } from "@acme/ui/components"
 
 interface DocPageProps {
   params: {
@@ -17,37 +18,69 @@ interface DocPageProps {
   }
 }
 
-async function getContentPath() {
-  const projectDirectory = await getProjectRoot()
-  if (!projectDirectory) throw "Unable to determine the project root directory."
-
+function getContentPath() {
+  // get project root
+  const projectDirectory = path.resolve("../../")
+  // get path to the content
   return path.join(projectDirectory, "apps/content")
 }
+
 export async function generateStaticParams(): Promise<
   DocPageProps["params"][]
 > {
-  const contentPath = await getContentPath()
+  const contentPath = getContentPath()
   const documents = await getAllDocuments(path.resolve(contentPath))
 
   return documents.map((ele) => ({ slug: ele.slug }))
 }
 
-export default async function DocsPage({ params }: DocPageProps) {
-  const contentPath = await getContentPath()
-
+export async function generateMetadata(
+  { params }: DocPageProps,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const contentPath = getContentPath()
   const parsedParams = `/${params.slug.join("/")}`
 
   const document = await getDocument(contentPath, parsedParams)
 
+  const parentMeta = await parent
+
+  console.log({ parentMeta })
+
+  return {
+    applicationName: parentMeta.applicationName,
+    title: document?.frontmatter.title ?? parentMeta.title,
+    description: document?.frontmatter.description ?? parentMeta.description,
+  }
+}
+export default async function DocsPage({ params }: DocPageProps) {
+  const contentPath = getContentPath()
+
+  const parsedParams = `/${params.slug.join("/")}`
+
+  const document = await getDocument(contentPath, parsedParams)
   if (!document) notFound()
 
   const pageContent = await parseContent(document.docPath)
-
   if (!pageContent) notFound()
 
   return (
-    <main className="">
-      {Markdoc.renderers.react(pageContent.content, React, { components })}
-    </main>
+    <div className="flex-1">
+      <div className="container">
+        <div className="mx-auto flex">
+          <aside className="sticky top-16 hidden h-[calc(100vh-121px)] w-[284px] lg:flex lg:shrink-0 lg:flex-col lg:justify-between">
+            <div className="absolute bottom-0 right-0 top-12 w-px bg-gray-200 dark:block dark:bg-slate-800" />
+            <div className="overflow-y-auto overflow-x-hidden bg-red-200 py-8 pr-6">
+              <SidebarNavigation items={[]} />
+            </div>
+          </aside>
+          <main className="mt-4 w-full min-w-0 max-w-6xl px-0 lg:pl-6 xl:pr-8">
+            {Markdoc.renderers.react(pageContent.content, React, {
+              components,
+            })}
+          </main>
+        </div>
+      </div>
+    </div>
   )
 }

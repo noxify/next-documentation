@@ -30,6 +30,10 @@ export const nodes: Config["nodes"] = {
   paragraph: {
     render: "Paragraph",
   },
+
+  blockquote: {
+    render: "Blockquote",
+  },
 }
 
 export const tags: Config["tags"] = {}

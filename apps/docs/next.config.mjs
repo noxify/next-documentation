@@ -1,11 +1,11 @@
 // Importing env files here to validate on build
 import "./src/env.mjs"
 
-//import { withNextDevtools } from '@next-devtools/core/plugin'
+import { withNextDevtools } from '@next-devtools/core/plugin'
 
 /** @type {import("next").NextConfig} */
 const config = {
-  output: "export",
+  //output: "export",
 
   reactStrictMode: true,
   /** Enables hot reloading for local packages without a build step */
@@ -19,5 +19,5 @@ const config = {
   typescript: { ignoreBuildErrors: true },
 }
 
-//export default withNextDevtools(config)
-export default config
+export default withNextDevtools(config)
+//export default config

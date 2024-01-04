@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-
-//import { NextDevtoolsProvider } from "@next-devtools/core"
+import { NextDevtoolsProvider } from "@next-devtools/core"
 
 import { TailwindIndicator } from "@acme/ui/components"
 
@@ -22,21 +21,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en" suppressHydrationWarning={true}>
       <head />
       <body>
-        {/* <NextDevtoolsProvider> */}
-        <Providers
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-          attribute="class"
-        >
-          <div className="relative flex flex-col">
-            <SiteHeader />
-            {children}
-            <SiteFooter />
-          </div>
-          <TailwindIndicator />
-        </Providers>
-        {/* </NextDevtoolsProvider> */}
+        <NextDevtoolsProvider>
+          <Providers
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+            attribute="class"
+          >
+            <div className="relative flex flex-col">
+              <SiteHeader />
+              {children}
+              <SiteFooter />
+            </div>
+            <TailwindIndicator />
+          </Providers>
+        </NextDevtoolsProvider>
       </body>
     </html>
   )

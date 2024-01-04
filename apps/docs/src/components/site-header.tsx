@@ -1,10 +1,13 @@
+"use client"
+
 import Link from "next/link"
 
+//import { useNavigationStore } from "@/hooks/navigation"
+
 import { Logo, ThemeToggle } from "@acme/ui/components"
-import { useNavigationStore } from '@/hooks/navigation'
 
 export function SiteHeader() {
-  const navigationHook = useNavigationStore()
+  //  const navigationHook = useNavigationStore()
 
   return (
     <header className=" sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
